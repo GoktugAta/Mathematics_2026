@@ -15,4 +15,3 @@
 - First column of $B$ as a column vector:
 $$
 \begin{pmatrix} 1 \\ -2 \\ 4 \end{pmatrix}
-$$
