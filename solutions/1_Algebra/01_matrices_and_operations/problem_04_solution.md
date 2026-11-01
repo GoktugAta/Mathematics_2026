@@ -3,7 +3,6 @@
 ### 1. Computing AB
 
 $$
-AB = 
 \begin{pmatrix} 
 1 & 2 \\ 
 0 & 1 
@@ -22,7 +21,6 @@ $$
 ### 2. Computing BA
 
 $$
-BA = 
 \begin{pmatrix} 
 2 & 0 \\ 
 3 & 1 
