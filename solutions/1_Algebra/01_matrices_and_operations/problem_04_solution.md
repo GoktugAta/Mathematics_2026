@@ -7,7 +7,8 @@ AB = \begin{pmatrix}
 0 & 1 
 \end{pmatrix} 
 \begin{pmatrix} 
-2 & 0 \\ 3 & 1 
+2 & 0 \\ 
+3 & 1 
 \end{pmatrix} = 
 \begin{pmatrix} 
 8 & 2 \\ 
