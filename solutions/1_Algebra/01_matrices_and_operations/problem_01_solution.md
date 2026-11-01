@@ -18,8 +18,8 @@
 * First column of $B$ as a column vector: 
   $$
   \begin{pmatrix} 
-  1 \quad \newline 
-  -2 \quad \newline 
+  1 \newline 
+  -2 \newline 
   4 
   \end{pmatrix}
   $$
