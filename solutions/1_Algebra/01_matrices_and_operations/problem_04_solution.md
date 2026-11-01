@@ -49,4 +49,4 @@ $$
 $$
 
 ### 4. Explanation of Noncommutativity
-Matrix multiplication is generally **noncommutative**, meaning that changing the order of multiplication ($AB$ versus $BA$) does not yield the same result. This is a fundamental difference from ordinary number multiplication where $ab = ba$ is always true.
+Matrix multiplication is generally **noncommutative**, meaning that changing the order of multiplication ($AB$ versus $BA$) does not yield the same result. This is a fundamental difference from ordinary number multiplication where $ab = ba$ is always true
