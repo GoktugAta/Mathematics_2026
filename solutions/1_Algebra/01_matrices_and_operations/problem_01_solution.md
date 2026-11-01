@@ -15,11 +15,12 @@
 ### 3. Vectors
 
 * Second row of $A$ as a row vector: $(0, 4, 5)$
-* First column of $B$ as a column vector: 
-  $$
-  \begin{pmatrix} 
-  1 \newline 
-  -2 \newline 
-  4 
-  \end{pmatrix}
-  $$
+* First column of $B$ as a column vector:
+
+$$
+\begin{pmatrix}
+1 \\
+-2 \\
+4 \\
+\end{pmatrix}
+$$
