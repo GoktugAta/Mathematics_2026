@@ -14,7 +14,7 @@ Ax =
 \end{pmatrix}
 =
 \begin{pmatrix}
-2 \cdot 4 + (-1) \cdot 2 \\
+2 \cdot 4 - 1 \cdot 2 \\
 1 \cdot 4 + 3 \cdot 2
 \end{pmatrix}
 =
@@ -26,27 +26,10 @@ $$
 
 ### 2. Linear Combination of the Columns of A
 
-The columns of $A$ are:
-
-$$
-a_1 =
-\begin{pmatrix}
-2 \\
-1
-\end{pmatrix},
-\qquad
-a_2 =
-\begin{pmatrix}
--1 \\
-3
-\end{pmatrix}
-$$
-
 Using the entries of $x$ as coefficients:
 
 $$
-Ax = 4a_1 + 2a_2
-=
+Ax =
 4
 \begin{pmatrix}
 2 \\
@@ -75,5 +58,4 @@ Ax = 4a_1 + 2a_2
 \end{pmatrix}
 $$
 
-Thus, $Ax$ is a linear combination of the columns of $A$,
-with coefficients $4$ and $2$ from the vector $x$.
+Thus, $Ax$ is a linear combination of the columns of $A$, with coefficients $4$ and $2$ from the vector $x$.
