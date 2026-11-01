@@ -1,11 +1,10 @@
 # Problem 4 Solution
 
 ### 1. Computing AB
-
 $$
 \begin{pmatrix} 
-1 & 2 \\ 
-0 & 1 
+1 \quad 2
+0 \quad 1
 \end{pmatrix} 
 \begin{pmatrix} 
 2 & 0 \\ 
