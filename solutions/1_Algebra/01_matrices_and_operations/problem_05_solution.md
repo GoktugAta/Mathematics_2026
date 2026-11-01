@@ -2,7 +2,7 @@
 
 ### 1. Computing Ax
 
-$$
+```math
 Ax =
 \begin{pmatrix}
 2 & -1 \\
@@ -14,30 +14,28 @@ Ax =
 \end{pmatrix}
 =
 \begin{pmatrix}
-2 \cdot 4 - 1 \cdot 2 \\
-1 \cdot 4 + 3 \cdot 2
+2(4)-1(2) \\
+1(4)+3(2)
 \end{pmatrix}
 =
 \begin{pmatrix}
 6 \\
 10
 \end{pmatrix}
-$$
+```
 
 ### 2. Linear Combination of the Columns of A
 
-Using the entries of $x$ as coefficients:
+The entries of x are the coefficients of the columns of A:
 
-$$
+```math
 Ax =
-4
-\begin{pmatrix}
+4\begin{pmatrix}
 2 \\
 1
 \end{pmatrix}
 +
-2
-\begin{pmatrix}
+2\begin{pmatrix}
 -1 \\
 3
 \end{pmatrix}
@@ -56,6 +54,6 @@ Ax =
 6 \\
 10
 \end{pmatrix}
-$$
+```
 
-Thus, $Ax$ is a linear combination of the columns of $A$, with coefficients $4$ and $2$ from the vector $x$.
+Thus, Ax is a linear combination of the columns of A with coefficients 4 and 2.
