@@ -1,6 +1,37 @@
-# Problem 13 Solution
+# Exercise 13. A Recurrence Written in Matrix Form
 
-### 1. Computing F²
+## Question
+
+Let
+
+```math
+F =
+\begin{pmatrix}
+1 & 1 \\
+1 & 0
+\end{pmatrix}.
+```
+
+Compute F², F³, F⁴, and F⁵. Compare the numbers obtained with the sequence
+
+```math
+0,1,1,2,3,5,8,\ldots
+```
+
+and describe the relationship you observe. Then compute
+
+```math
+F\begin{pmatrix}
+a \\
+b
+\end{pmatrix}
+```
+
+and explain how this multiplication performs one recurrence step: it creates the sum of two consecutive terms and keeps one of them for the next step.
+
+## Solution
+
+### 1. Computing the Powers
 
 ```math
 F^2 =
@@ -16,13 +47,11 @@ F^2 =
 \begin{pmatrix}
 2 & 1 \\
 1 & 1
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
-### 2. Computing F³
-
 ```math
-F^3 = F^2 F =
+F^3 =
 \begin{pmatrix}
 2 & 1 \\
 1 & 1
@@ -35,13 +64,11 @@ F^3 = F^2 F =
 \begin{pmatrix}
 3 & 2 \\
 2 & 1
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
-### 3. Computing F⁴
-
 ```math
-F^4 = F^3 F =
+F^4 =
 \begin{pmatrix}
 3 & 2 \\
 2 & 1
@@ -54,13 +81,11 @@ F^4 = F^3 F =
 \begin{pmatrix}
 5 & 3 \\
 3 & 2
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
-### 4. Computing F⁵
-
 ```math
-F^5 = F^4 F =
+F^5 =
 \begin{pmatrix}
 5 & 3 \\
 3 & 2
@@ -73,55 +98,35 @@ F^5 = F^4 F =
 \begin{pmatrix}
 8 & 5 \\
 5 & 3
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
-### 5. Relationship with the Fibonacci Sequence
+### 2. Relationship with Fibonacci Numbers
 
 The entries are consecutive Fibonacci numbers. Define:
 
 ```math
-f_0 = 0,
-\qquad
-f_1 = 1,
-\qquad
-f_{n+1} = f_n + f_{n-1}
-\quad (n \geq 1).
+f_0=0,\qquad f_1=1,
+\qquad f_{n+1}=f_n+f_{n-1}\quad(n\geq1).
 ```
 
-The observed pattern is:
+The pattern is:
 
 ```math
 F^n =
 \begin{pmatrix}
 f_{n+1} & f_n \\
 f_n & f_{n-1}
-\end{pmatrix}
-\quad (n \geq 1).
+\end{pmatrix},
+\qquad n\geq1.
 ```
 
-Multiplying this matrix by F gives:
+Multiplication by F advances the entries to the next Fibonacci numbers.
+
+### 3. One Recurrence Step
 
 ```math
-F^{n+1} =
-\begin{pmatrix}
-f_{n+1}+f_n & f_{n+1} \\
-f_n+f_{n-1} & f_n
-\end{pmatrix}
-=
-\begin{pmatrix}
-f_{n+2} & f_{n+1} \\
-f_{n+1} & f_n
-\end{pmatrix}.
-```
-
-Thus, each multiplication advances the Fibonacci pattern by one step.
-
-### 6. Multiplying F by a Column Vector
-
-```math
-F
-\begin{pmatrix}
+F\begin{pmatrix}
 a \\
 b
 \end{pmatrix}
@@ -138,16 +143,15 @@ b
 \begin{pmatrix}
 a+b \\
 a
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
-If a is the current term and b is the previous term, the new first entry is the next term, a + b. The second entry keeps a for the following step.
+If a is the current term and b is the previous term, the new first entry a + b is the next term. The second entry keeps a as the previous term for the following step.
 
-For Fibonacci numbers:
+In particular:
 
 ```math
-F
-\begin{pmatrix}
+F\begin{pmatrix}
 f_{n+1} \\
 f_n
 \end{pmatrix}
@@ -158,4 +162,4 @@ f_{n+1}
 \end{pmatrix}.
 ```
 
-Therefore, multiplication by F performs one step of the Fibonacci recurrence.
+Thus, multiplication by F performs one step of the Fibonacci recurrence.
