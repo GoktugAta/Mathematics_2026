@@ -1,49 +1,75 @@
-# Problem 9 Solution
+# Exercise 9. Area and the Determinant
+
+## Question
+
+The vectors
+
+```math
+u =
+\begin{pmatrix}
+3 \\
+1
+\end{pmatrix},
+\qquad
+v =
+\begin{pmatrix}
+1 \\
+4
+\end{pmatrix}
+```
+
+span a parallelogram. Compute its area using a determinant. Then reverse the order of the vectors and explain what changes in the determinant and what does not change in the area.
+
+## Solution
 
 ### 1. Computing the Area
 
-Place the vectors as columns of a matrix:
+Place u and v as the columns of a matrix:
 
 ```math
 M =
 \begin{pmatrix}
 3 & 1 \\
 1 & 4
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
-The area of the parallelogram is the absolute value of the determinant:
+Its determinant is:
 
 ```math
-\det(M)=3\cdot4-1\cdot1=12-1=11.
+\det(M)=3\cdot4-1\cdot1=11.
 ```
+
+The area is the absolute value of this determinant:
 
 ```math
-\text{Area}=|\det(M)|=|11|=\boxed{11}
+\text{Area}=|\det(M)|=11.
 ```
 
-The area is 11 square units.
+Thus, the parallelogram has area 11 square units.
 
-### 2. Reversing the Order of the Vectors
+### 2. Reversing the Vector Order
 
-Swapping the columns gives:
+Reversing the order swaps the columns:
 
 ```math
 N =
 \begin{pmatrix}
 1 & 3 \\
 4 & 1
-\end{pmatrix}
+\end{pmatrix}.
 ```
+
+Then:
 
 ```math
-\det(N)=1\cdot1-3\cdot4=1-12=-11.
+\det(N)=1\cdot1-3\cdot4=-11.
 ```
 
-Swapping two columns reverses the sign of the determinant, reflecting a reversal of orientation. However, its absolute value remains unchanged:
+Swapping the columns reverses orientation and changes the sign of the determinant. However:
 
 ```math
-\text{Area}=|\det(N)|=|-11|=\boxed{11}.
+|\det(N)|=|-11|=11.
 ```
 
-Thus, the determinant changes sign, but the parallelogram and its area remain unchanged.
+The parallelogram and its area remain unchanged.
