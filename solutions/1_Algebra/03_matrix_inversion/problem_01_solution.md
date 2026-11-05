@@ -1,6 +1,30 @@
-# Problem 1 Solution
+# Exercise 1. Definition of the Inverse
 
-### 1. Computing AB
+## Question
+
+For
+
+```math
+A =
+\begin{pmatrix}
+2 & 1 \\
+1 & 1
+\end{pmatrix},
+\qquad
+B =
+\begin{pmatrix}
+1 & -1 \\
+-1 & 2
+\end{pmatrix},
+```
+
+check, without using a formula, whether B = A⁻¹. Compute AB and BA and relate the result to the definition of the inverse.
+
+## Solution
+
+### Computing AB
+
+We multiply each row of A by each column of B:
 
 ```math
 AB =
@@ -21,11 +45,10 @@ AB =
 \begin{pmatrix}
 1 & 0 \\
 0 & 1
-\end{pmatrix}
-= I.
+\end{pmatrix}.
 ```
 
-### 2. Computing BA
+### Computing BA
 
 ```math
 BA =
@@ -46,19 +69,12 @@ BA =
 \begin{pmatrix}
 1 & 0 \\
 0 & 1
-\end{pmatrix}
-= I.
+\end{pmatrix}.
 ```
 
-### 3. Conclusion Using the Definition
+### Conclusion
 
-By definition, B is the inverse of A if:
-
-```math
-AB = BA = I.
-```
-
-Both products equal the identity matrix. Therefore:
+By definition, an inverse must satisfy both AB = I and BA = I. Both products equal the identity matrix, so:
 
 ```math
 \boxed{B=A^{-1}}.
