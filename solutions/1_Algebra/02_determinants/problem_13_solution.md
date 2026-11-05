@@ -1,6 +1,8 @@
-# Problem 13 Solution
+# Exercise 13. Determinant by Elimination
 
-### 1. Original Matrix
+## Question
+
+Compute the determinant of
 
 ```math
 A =
@@ -11,15 +13,19 @@ A =
 \end{pmatrix}
 ```
 
-### 2. Eliminate the First Entry of Row 2
+using elimination. Record the effect of every row operation used on the value of the determinant.
+
+## Solution
+
+### 1. First Operation
 
 Apply:
 
 ```math
-R_2 \leftarrow R_2-2R_1.
+R_2\leftarrow R_2-2R_1.
 ```
 
-Adding a multiple of another row does not change the determinant:
+This adds a multiple of another row, so the determinant is unchanged:
 
 ```math
 A_1 =
@@ -32,15 +38,15 @@ A_1 =
 \det(A_1)=\det(A).
 ```
 
-### 3. Eliminate the First Entry of Row 3
+### 2. Second Operation
 
 Apply:
 
 ```math
-R_3 \leftarrow R_3-R_1.
+R_3\leftarrow R_3-R_1.
 ```
 
-The determinant remains unchanged:
+The determinant is unchanged:
 
 ```math
 A_2 =
@@ -53,15 +59,15 @@ A_2 =
 \det(A_2)=\det(A).
 ```
 
-### 4. Eliminate the Second Entry of Row 3
+### 3. Third Operation
 
 Apply:
 
 ```math
-R_3 \leftarrow R_3+2R_2.
+R_3\leftarrow R_3+2R_2.
 ```
 
-The determinant remains unchanged:
+The determinant is unchanged:
 
 ```math
 U =
@@ -74,12 +80,12 @@ U =
 \det(U)=\det(A).
 ```
 
-### 5. Computing the Determinant
+### 4. Computing the Determinant
 
-Since U is upper triangular:
+The resulting matrix is upper triangular:
 
 ```math
-\det(A)=\det(U)=1\cdot1\cdot1=\boxed{1}.
+\det(A)=\det(U)=1\cdot1\cdot1=1.
 ```
 
-Every row operation used preserves the determinant, so no correction is needed.
+Every operation preserves the determinant, so no correction is required.
