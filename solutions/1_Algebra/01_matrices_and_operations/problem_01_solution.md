@@ -27,19 +27,23 @@ B =
 
 ### 1. Matrix Sizes
 
-Matrix size is written as the number of rows × the number of columns.
+The size of a matrix is its number of rows × its number of columns.
 
-A has two rows and three columns, while B has three rows and two columns:
+A has 2 rows and 3 columns, so its size is:
 
 ```math
-\operatorname{size}(A)=2\times3,
-\qquad
-\operatorname{size}(B)=3\times2.
+2\times3.
+```
+
+B has 3 rows and 2 columns, so its size is:
+
+```math
+3\times2.
 ```
 
 ### 2. Requested Entries
 
-The first index specifies the row, and the second index specifies the column:
+The first index indicates the row, and the second index indicates the column. Reading the specified positions gives:
 
 ```math
 a_{12}=-1,
@@ -53,7 +57,7 @@ b_{32}=1.
 
 ### 3. Row and Column Vectors
 
-The second row of A is a horizontal 1 × 3 vector:
+The second row of A is the horizontal 1 × 3 vector:
 
 ```math
 \begin{pmatrix}
@@ -61,7 +65,7 @@ The second row of A is a horizontal 1 × 3 vector:
 \end{pmatrix}.
 ```
 
-The first column of B is a vertical 3 × 1 vector:
+The first column of B is the vertical 3 × 1 vector:
 
 ```math
 \begin{pmatrix}
