@@ -1,19 +1,27 @@
-# Problem 8 Solution
+# Exercise 8. Inverse of a Transformation
 
-### 1. Finding the Inverse
+## Question
+
+The matrix
 
 ```math
 S =
 \begin{pmatrix}
 2 & 0 \\
 0 & \frac12
-\end{pmatrix}.
+\end{pmatrix}
 ```
 
-The inverse of a diagonal scaling matrix is obtained by taking the reciprocal of each diagonal entry:
+describes a scaling of the plane. Find S⁻¹ and explain geometrically what the inverse transformation does. Check the action of the pair S, S⁻¹ on one simple vector.
+
+## Solution
+
+### Finding the Inverse
+
+To reverse a nonzero scaling factor, we multiply by its reciprocal. Therefore:
 
 ```math
-S^{-1} =
+S^{-1}=
 \begin{pmatrix}
 \frac12 & 0 \\
 0 & 2
@@ -23,7 +31,7 @@ S^{-1} =
 Indeed:
 
 ```math
-SS^{-1} =
+SS^{-1}=
 \begin{pmatrix}
 2 & 0 \\
 0 & \frac12
@@ -37,31 +45,31 @@ SS^{-1} =
 1 & 0 \\
 0 & 1
 \end{pmatrix}
-= I.
+=I.
 ```
 
-### 2. Geometric Interpretation
+### Geometric Interpretation
 
 S doubles the horizontal coordinate and halves the vertical coordinate.
 
-Its inverse reverses these changes: S⁻¹ halves the horizontal coordinate and doubles the vertical coordinate.
+S⁻¹ reverses these changes: it halves the horizontal coordinate and doubles the vertical coordinate.
 
-### 3. Checking on a Simple Vector
+### Checking on a Vector
 
 Choose:
 
 ```math
-v =
+v=
 \begin{pmatrix}
 1 \\
 2
 \end{pmatrix}.
 ```
 
-First apply S:
+First, apply S:
 
 ```math
-Sv =
+Sv=
 \begin{pmatrix}
 2 & 0 \\
 0 & \frac12
@@ -80,7 +88,7 @@ Sv =
 Then apply S⁻¹:
 
 ```math
-S^{-1}(Sv) =
+S^{-1}(Sv)=
 \begin{pmatrix}
 \frac12 & 0 \\
 0 & 2
@@ -97,4 +105,4 @@ S^{-1}(Sv) =
 =v.
 ```
 
-Thus, the inverse transformation restores the original vector.
+The inverse transformation restores the original vector.
