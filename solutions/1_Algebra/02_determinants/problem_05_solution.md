@@ -1,6 +1,8 @@
-# Problem 5 Solution
+# Exercise 5. Row Operations
 
-### 1. Original Matrix
+## Question
+
+For
 
 ```math
 A =
@@ -8,20 +10,22 @@ A =
 1 & 2 & 3 \\
 2 & 1 & 0 \\
 -1 & 4 & 2
-\end{pmatrix}
+\end{pmatrix},
 ```
 
-We simplify A using row replacement operations. Adding a multiple of one row to another does not change the determinant.
+find det(A) by simplifying the matrix with row operations. At each step, indicate whether and how the determinant changes.
 
-### 2. Eliminate the First Entry of Row 2
+## Solution
+
+### 1. First Row Operation
 
 Apply:
 
 ```math
-R_2 \leftarrow R_2 - 2R_1
+R_2\leftarrow R_2-2R_1.
 ```
 
-The determinant remains unchanged:
+Adding a multiple of another row preserves the determinant:
 
 ```math
 A_1 =
@@ -34,12 +38,12 @@ A_1 =
 \det(A_1)=\det(A).
 ```
 
-### 3. Eliminate the First Entry of Row 3
+### 2. Second Row Operation
 
 Apply:
 
 ```math
-R_3 \leftarrow R_3 + R_1
+R_3\leftarrow R_3+R_1.
 ```
 
 The determinant remains unchanged:
@@ -55,12 +59,12 @@ A_2 =
 \det(A_2)=\det(A).
 ```
 
-### 4. Eliminate the Second Entry of Row 3
+### 3. Third Row Operation
 
 Apply:
 
 ```math
-R_3 \leftarrow R_3 + 2R_2
+R_3\leftarrow R_3+2R_2.
 ```
 
 The determinant remains unchanged:
@@ -76,12 +80,12 @@ U =
 \det(U)=\det(A).
 ```
 
-### 5. Compute the Determinant
+### 4. Computing the Determinant
 
-U is upper triangular, so its determinant is the product of its diagonal entries:
+The resulting matrix is upper triangular, so:
 
 ```math
 \det(A)=\det(U)=1\cdot(-3)\cdot(-7)=21.
 ```
 
-All three row operations preserve the determinant, so no sign or scaling correction is needed.
+All operations preserve the determinant, so no correction is required.
