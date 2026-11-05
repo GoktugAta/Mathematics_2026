@@ -1,53 +1,44 @@
-# Problem 1 Solution
+# Exercise 1. Determinant of a 2 × 2 Matrix
 
-### 1. Determinant Formula
+## Question
 
-For a 2 × 2 matrix:
+Compute:
+
+```math
+\det\begin{pmatrix}
+3 & -2 \\
+5 & 4
+\end{pmatrix},
+\qquad
+\det\begin{pmatrix}
+1 & 7 \\
+2 & 14
+\end{pmatrix}.
+```
+
+Which matrix is invertible? Justify your answer.
+
+## Solution
+
+For a 2 × 2 matrix, the determinant is:
 
 ```math
 \det\begin{pmatrix}
 a & b \\
 c & d
-\end{pmatrix}
-= ad-bc.
+\end{pmatrix}=ad-bc.
 ```
 
-### 2. First Matrix
+For the first matrix:
 
 ```math
-A =
-\begin{pmatrix}
-3 & -2 \\
-5 & 4
-\end{pmatrix}
+3\cdot4-(-2)\cdot5=12+10=22.
 ```
+
+For the second matrix:
 
 ```math
-\det(A) = 3 \cdot 4 - (-2)\cdot 5
-= 12+10
-= 22.
+1\cdot14-7\cdot2=14-14=0.
 ```
 
-### 3. Second Matrix
-
-```math
-B =
-\begin{pmatrix}
-1 & 7 \\
-2 & 14
-\end{pmatrix}
-```
-
-```math
-\det(B) = 1 \cdot 14 - 7 \cdot 2
-= 14-14
-= 0.
-```
-
-### 4. Invertibility
-
-A square matrix is invertible if and only if its determinant is nonzero.
-
-Since det(A) = 22, the first matrix is invertible.
-
-Since det(B) = 0, the second matrix is not invertible. Its second row is twice its first row, so its rows are linearly dependent.
+A square matrix is invertible if and only if its determinant is nonzero. Therefore, the first matrix is invertible, while the second is not.
