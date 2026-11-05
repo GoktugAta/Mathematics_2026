@@ -1,9 +1,31 @@
-# Problem 14 Solution
+# Exercise 14. Rotation Matrices
 
-### 1. Computing R(α)R(β)
+## Question
+
+The matrix for a rotation through an angle θ is:
 
 ```math
-R(\alpha)R(\beta) =
+R(\theta) =
+\begin{pmatrix}
+\cos\theta & -\sin\theta \\
+\sin\theta & \cos\theta
+\end{pmatrix}.
+```
+
+Compute R(α)R(β) and, using the angle-sum formulas for sine and cosine, show that:
+
+```math
+R(\alpha)R(\beta)=R(\alpha+\beta).
+```
+
+Explain the result geometrically.
+
+## Solution
+
+### 1. Multiplying the Rotation Matrices
+
+```math
+R(\alpha)R(\beta)=
 \begin{pmatrix}
 \cos\alpha & -\sin\alpha \\
 \sin\alpha & \cos\alpha
@@ -11,55 +33,48 @@ R(\alpha)R(\beta) =
 \begin{pmatrix}
 \cos\beta & -\sin\beta \\
 \sin\beta & \cos\beta
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
 Multiplying rows by columns gives:
 
 ```math
-R(\alpha)R(\beta) =
+R(\alpha)R(\beta)=
 \begin{pmatrix}
 \cos\alpha\cos\beta-\sin\alpha\sin\beta &
 -\cos\alpha\sin\beta-\sin\alpha\cos\beta \\
 \sin\alpha\cos\beta+\cos\alpha\sin\beta &
 -\sin\alpha\sin\beta+\cos\alpha\cos\beta
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
-### 2. Applying the Angle-Sum Formulas
+### 2. Using the Angle-Sum Formulas
 
 The angle-sum identities are:
 
 ```math
 \cos(\alpha+\beta)
-=
-\cos\alpha\cos\beta-\sin\alpha\sin\beta
+=\cos\alpha\cos\beta-\sin\alpha\sin\beta,
 ```
 
 ```math
 \sin(\alpha+\beta)
-=
-\sin\alpha\cos\beta+\cos\alpha\sin\beta
+=\sin\alpha\cos\beta+\cos\alpha\sin\beta.
 ```
 
-Substituting these identities into the product:
+Substituting these identities gives:
 
 ```math
-R(\alpha)R(\beta) =
+R(\alpha)R(\beta)=
 \begin{pmatrix}
 \cos(\alpha+\beta) & -\sin(\alpha+\beta) \\
 \sin(\alpha+\beta) & \cos(\alpha+\beta)
 \end{pmatrix}
-=
-R(\alpha+\beta)
+=R(\alpha+\beta).
 ```
 
 ### 3. Geometric Explanation
 
-In the product R(α)R(β), the rightmost matrix acts first. A vector is first rotated through angle β about the origin, then through angle α about the same origin.
+The rightmost matrix acts first. Thus, R(α)R(β) first rotates a vector through β and then through α, both about the origin.
 
-The total rotation angle is α + β. Therefore, the two successive rotations are equivalent to a single rotation through angle α + β:
-
-```math
-R(\alpha)R(\beta)=R(\alpha+\beta).
-```
+The total rotation angle is α + β, so these two rotations are equivalent to one rotation through α + β.
