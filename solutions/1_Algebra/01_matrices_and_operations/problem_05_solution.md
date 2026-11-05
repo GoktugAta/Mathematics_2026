@@ -1,6 +1,30 @@
-# Problem 5 Solution
+# Exercise 5. Matrix Times Vector
+
+## Question
+
+Let
+
+```math
+A =
+\begin{pmatrix}
+2 & -1 \\
+1 & 3
+\end{pmatrix},
+\qquad
+x =
+\begin{pmatrix}
+4 \\
+2
+\end{pmatrix}.
+```
+
+Compute Ax. Then express Ax as a linear combination of the columns of A, with coefficients coming from the vector x.
+
+## Solution
 
 ### 1. Computing Ax
+
+Multiply each row of A by the column vector x:
 
 ```math
 Ax =
@@ -14,22 +38,39 @@ Ax =
 \end{pmatrix}
 =
 \begin{pmatrix}
-2(4)-1(2) \\
-1(4)+3(2)
+2\cdot4-1\cdot2 \\
+1\cdot4+3\cdot2
 \end{pmatrix}
 =
 \begin{pmatrix}
 6 \\
 10
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
-### 2. Linear Combination of the Columns of A
+### 2. Linear Combination of the Columns
 
-The entries of x are the coefficients of the columns of A:
+The columns of A are:
 
 ```math
-Ax =
+a_1 =
+\begin{pmatrix}
+2 \\
+1
+\end{pmatrix},
+\qquad
+a_2 =
+\begin{pmatrix}
+-1 \\
+3
+\end{pmatrix}.
+```
+
+The entries of x give the coefficients 4 and 2:
+
+```math
+Ax=4a_1+2a_2
+=
 4\begin{pmatrix}
 2 \\
 1
@@ -53,7 +94,7 @@ Ax =
 \begin{pmatrix}
 6 \\
 10
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
-Thus, Ax is a linear combination of the columns of A with coefficients 4 and 2.
+Thus, matrix-vector multiplication combines the columns of A using the corresponding entries of x as coefficients.
