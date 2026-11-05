@@ -1,29 +1,33 @@
-# Problem 4 Solution
+# Exercise 4. Triangular Matrix
 
-### 1. Computing the Determinant
+## Question
+
+Without expanding the determinant, compute:
 
 ```math
-A =
-\begin{pmatrix}
+\det\begin{pmatrix}
 2 & 4 & 1 \\
 0 & -3 & 5 \\
 0 & 0 & 7
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
-A is upper triangular because all entries below the main diagonal are zero. Its determinant is the product of its diagonal entries:
+State the rule for an arbitrary triangular matrix and explain using this example.
+
+## Solution
+
+The matrix is upper triangular because all entries below its main diagonal are zero.
+
+The determinant of any upper or lower triangular matrix is the product of its diagonal entries. For an n × n triangular matrix T:
 
 ```math
-\det(A) = 2 \cdot (-3) \cdot 7 = -42.
+\det(T)=t_{11}\cdot t_{22}\cdots t_{nn}.
 ```
 
-### 2. General Rule
-
-For any n × n upper or lower triangular matrix T:
+In this example, the diagonal entries are 2, −3, and 7. Therefore:
 
 ```math
-\det(T) = \prod_{i=1}^{n} t_{ii}
-= t_{11}t_{22}\cdots t_{nn}.
+\det(A)=2\cdot(-3)\cdot7=-42.
 ```
 
-In this example, the diagonal entries are 2, −3, and 7. The entries 4, 1, and 5 above the diagonal do not affect the determinant, so no expansion is needed.
+The entries above the diagonal do not affect this product, so no determinant expansion is needed.
