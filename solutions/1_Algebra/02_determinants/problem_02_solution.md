@@ -1,6 +1,8 @@
-# Problem 2 Solution
+# Exercise 2. Determinant of a 3 × 3 Matrix
 
-### 1. Computing the Determinant Using Sarrus' Rule
+## Question
+
+For
 
 ```math
 A =
@@ -8,43 +10,41 @@ A =
 1 & 2 & -1 \\
 0 & 3 & 4 \\
 2 & 1 & 5
-\end{pmatrix}
+\end{pmatrix},
 ```
+
+compute det(A) using Sarrus' rule. Then perform one simple check using a chosen property of the determinant.
+
+## Solution
+
+### 1. Applying Sarrus' Rule
 
 The sum of the downward diagonal products is:
 
 ```math
-1 \cdot 3 \cdot 5
-+ 2 \cdot 4 \cdot 2
-+ (-1) \cdot 0 \cdot 1
-= 15+16+0
-= 31.
+1\cdot3\cdot5+2\cdot4\cdot2+(-1)\cdot0\cdot1
+=15+16+0=31.
 ```
 
 The sum of the upward diagonal products is:
 
 ```math
-(-1) \cdot 3 \cdot 2
-+ 2 \cdot 0 \cdot 5
-+ 1 \cdot 4 \cdot 1
-= -6+0+4
-= -2.
+(-1)\cdot3\cdot2+2\cdot0\cdot5+1\cdot4\cdot1
+=-6+0+4=-2.
 ```
 
-Therefore:
+Subtracting the second sum from the first gives:
 
 ```math
-\det(A) = 31-(-2) = 33.
+\det(A)=31-(-2)=33.
 ```
 
-### 2. Check Using Row Operations
+### 2. Checking with Row Operations
 
-Adding a multiple of one row to another does not change the determinant.
-
-Apply:
+Adding a multiple of one row to another preserves the determinant. Apply:
 
 ```math
-R_3 \leftarrow R_3-2R_1
+R_3\leftarrow R_3-2R_1.
 ```
 
 This gives:
@@ -54,16 +54,16 @@ This gives:
 1 & 2 & -1 \\
 0 & 3 & 4 \\
 0 & -3 & 7
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
-Next, apply:
+Then apply:
 
 ```math
-R_3 \leftarrow R_3+R_2
+R_3\leftarrow R_3+R_2.
 ```
 
-This gives the upper triangular matrix:
+The resulting matrix is upper triangular:
 
 ```math
 U =
@@ -71,13 +71,13 @@ U =
 1 & 2 & -1 \\
 0 & 3 & 4 \\
 0 & 0 & 11
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
-The determinant of a triangular matrix is the product of its diagonal entries. Since both row operations preserve the determinant:
+Its determinant is the product of its diagonal entries:
 
 ```math
-\det(A) = \det(U) = 1 \cdot 3 \cdot 11 = 33.
+\det(A)=\det(U)=1\cdot3\cdot11=33.
 ```
 
-This confirms the result obtained using Sarrus' rule.
+This confirms the Sarrus calculation.
