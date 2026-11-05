@@ -1,8 +1,37 @@
-# Problem 15 Solution
+# Exercise 15. Associativity of Multiplication and Different Calculation Paths
+
+## Question
+
+Given
+
+```math
+A =
+\begin{pmatrix}
+1 & 2 & 0 \\
+0 & 1 & 1
+\end{pmatrix},
+\qquad
+B =
+\begin{pmatrix}
+1 & 0 \\
+2 & 1 \\
+-1 & 3
+\end{pmatrix},
+\qquad
+C =
+\begin{pmatrix}
+2 & 1 \\
+0 & -1
+\end{pmatrix},
+```
+
+compute (AB)C and A(BC). Compare the results and the number of intermediate operations. Explain what associativity of matrix multiplication means in this example.
+
+## Solution
 
 ### 1. Computing (AB)C
 
-First, compute AB:
+First compute AB:
 
 ```math
 AB =
@@ -24,7 +53,7 @@ AB =
 \begin{pmatrix}
 5 & 2 \\
 1 & 4
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
 Then multiply by C:
@@ -48,12 +77,12 @@ Then multiply by C:
 \begin{pmatrix}
 10 & 3 \\
 2 & -3
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
 ### 2. Computing A(BC)
 
-First, compute BC:
+First compute BC:
 
 ```math
 BC =
@@ -77,7 +106,7 @@ BC =
 2 & 1 \\
 4 & 1 \\
 -2 & -4
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
 Then multiply by A on the left:
@@ -102,26 +131,26 @@ A(BC) =
 \begin{pmatrix}
 10 & 3 \\
 2 & -3
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
 ### 3. Comparing the Results
 
-Both calculation paths give the same matrix:
+The two calculation paths produce the same matrix:
 
 ```math
-(AB)C = A(BC) =
+(AB)C=A(BC)=
 \begin{pmatrix}
 10 & 3 \\
 2 & -3
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
-### 4. Comparing the Number of Operations
+### 4. Comparing Operation Counts
 
-Using standard matrix multiplication, multiplying an m × n matrix by an n × p matrix requires mnp scalar multiplications and mp(n − 1) scalar additions.
+Using standard matrix multiplication, an m × n matrix multiplied by an n × p matrix requires mnp scalar multiplications and mp(n − 1) scalar additions.
 
-These counts include operations involving zero or one, without simplification.
+The following counts include operations involving zero and one, without simplification.
 
 | Calculation | Scalar multiplications | Scalar additions |
 |---|---:|---:|
@@ -132,16 +161,14 @@ These counts include operations involving zero or one, without simplification.
 | A(BC) | 12 | 8 |
 | Second path total | 24 | 14 |
 
-Both paths use two matrix multiplications, but the first path requires fewer scalar operations because AB is a 2 × 2 matrix, while BC is a 3 × 2 matrix.
+Both paths use two matrix multiplications. However, AB has only four entries, while BC has six. Computing AB first therefore requires fewer scalar operations overall.
 
 ### 5. Meaning of Associativity
 
-Associativity means that changing the grouping of a matrix product does not change the result, provided the products are defined:
+Associativity means that changing the grouping of a matrix product does not change its value:
 
 ```math
-(AB)C = A(BC).
+(AB)C=A(BC).
 ```
 
-The order of A, B, and C remains unchanged. Only the choice of which pair to multiply first changes.
-
-In this example, both groupings produce the same matrix, but computing AB first requires fewer scalar operations.
+The order of A, B, and C remains the same; only the pair multiplied first changes. In this example, the final result is identical, but the computational effort differs.
