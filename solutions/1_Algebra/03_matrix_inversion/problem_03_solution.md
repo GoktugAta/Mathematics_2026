@@ -1,36 +1,44 @@
-# Problem 3 Solution
+# Exercise 3. When Does the Inverse Not Exist?
+
+## Question
+
+For
 
 ```math
 A =
 \begin{pmatrix}
 2 & 4 \\
 1 & 2
-\end{pmatrix}.
+\end{pmatrix},
 ```
 
-### 1. Explanation Using the Determinant
+explain in two ways why A⁻¹ does not exist: using the determinant and using dependence between the rows.
+
+## Solution
+
+### Explanation Using the Determinant
 
 ```math
-\det(A)=2\cdot2-4\cdot1=4-4=0.
+\det(A)=2\cdot2-4\cdot1=0.
 ```
 
-A square matrix is invertible if and only if its determinant is nonzero. Therefore, A has no inverse.
+A square matrix is invertible if and only if its determinant is nonzero. Since the determinant is zero, A has no inverse.
 
-### 2. Explanation Using Row Dependence
+### Explanation Using Row Dependence
 
-The first row is twice the second row:
+The first row is twice the second:
 
 ```math
 R_1=2R_2.
 ```
 
-Thus, the rows are linearly dependent. Applying:
+Therefore, the rows are linearly dependent. Applying the row operation
 
 ```math
 R_1 \leftarrow R_1-2R_2
 ```
 
-produces a zero row:
+gives:
 
 ```math
 \begin{pmatrix}
@@ -39,4 +47,4 @@ produces a zero row:
 \end{pmatrix}.
 ```
 
-The matrix has rank 1 and cannot be reduced to the 2 × 2 identity matrix. Hence, A is not invertible.
+The matrix has only one independent row and cannot be reduced to the 2 × 2 identity matrix. Thus, A is not invertible.
