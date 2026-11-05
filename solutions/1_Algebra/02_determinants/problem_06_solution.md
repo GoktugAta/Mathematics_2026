@@ -1,35 +1,43 @@
-# Problem 6 Solution
+# Exercise 6. Parameter and Invertibility
 
-### 1. Computing the Determinant
+## Question
+
+For
 
 ```math
 A(t) =
 \begin{pmatrix}
 t & 1 \\
 2 & t
-\end{pmatrix}
+\end{pmatrix},
 ```
+
+find all values of t for which the matrix is not invertible. Explain how your answer is related to the determinant being zero.
+
+## Solution
+
+The determinant is:
 
 ```math
-\det(A(t)) = t \cdot t - 1 \cdot 2 = t^2-2.
+\det(A(t))=t\cdot t-1\cdot2=t^2-2.
 ```
 
-### 2. Finding When the Matrix Is Not Invertible
-
-A square matrix is not invertible if and only if its determinant is zero:
+A square matrix is not invertible exactly when its determinant is zero. Therefore, solve:
 
 ```math
 t^2-2=0
 \quad\Longrightarrow\quad
 t^2=2
 \quad\Longrightarrow\quad
-t=\pm\sqrt{2}.
+t=\pm\sqrt2.
 ```
 
-Therefore, A(t) is not invertible exactly when:
+Thus, A(t) is not invertible for:
 
 ```math
-\boxed{t=\sqrt{2}\ \text{or}\ t=-\sqrt{2}}.
+t=\sqrt2
+\qquad\text{or}\qquad
+t=-\sqrt2.
 ```
 
-For all other real values of t, the determinant is nonzero, so A(t) is invertible.
+For every other real value of t, the determinant is nonzero and the matrix is invertible.
