@@ -1,10 +1,27 @@
-# Problem 4 Solution
+# Exercise 4. Gauss–Jordan
 
-### 1. Form the Augmented Matrix
+## Question
+
+Find A⁻¹ using the Gauss–Jordan method for
 
 ```math
-[A \mid I]
-=
+A =
+\begin{pmatrix}
+1 & 2 \\
+3 & 5
+\end{pmatrix}.
+```
+
+Show the augmented matrix [A | I] after successive operations and explain why obtaining I on the left gives the inverse on the right.
+
+## Solution
+
+### Forming the Augmented Matrix
+
+We apply the same row operations to A and I:
+
+```math
+[A \mid I]=
 \left(
 \begin{array}{cc|cc}
 1 & 2 & 1 & 0 \\
@@ -13,7 +30,7 @@
 \right).
 ```
 
-### 2. Eliminate the First Entry of Row 2
+### Eliminating Below the First Pivot
 
 Apply:
 
@@ -30,7 +47,7 @@ R_2 \leftarrow R_2-3R_1.
 \right).
 ```
 
-### 3. Make the Second Pivot Equal to 1
+### Normalizing the Second Pivot
 
 Apply:
 
@@ -47,7 +64,7 @@ R_2 \leftarrow -R_2.
 \right).
 ```
 
-### 4. Eliminate the Second Entry of Row 1
+### Eliminating Above the Second Pivot
 
 Apply:
 
@@ -62,8 +79,7 @@ R_1 \leftarrow R_1-2R_2.
 0 & 1 & 3 & -1
 \end{array}
 \right)
-=
-[I \mid A^{-1}].
+=[I \mid A^{-1}].
 ```
 
 Therefore:
@@ -78,24 +94,12 @@ A^{-1}=
 }.
 ```
 
-### 5. Why the Method Works
+### Why the Method Works
 
-Each row operation is equivalent to multiplication on the left by an elementary matrix. Let E be the product of these elementary matrices.
-
-Applying the same operations to both sides of the augmented matrix gives:
+Each row operation is multiplication on the left by an invertible elementary matrix. If E represents the combined operations, then:
 
 ```math
-[A \mid I]
-\longrightarrow
-[EA \mid EI].
+[A \mid I]\longrightarrow[EA \mid EI].
 ```
 
-Since the left side becomes I:
-
-```math
-EA=I
-\quad\Longrightarrow\quad
-E=A^{-1}.
-```
-
-The right side becomes EI = E = A⁻¹, which explains why it contains the inverse.
+The left block becomes I, so EA = I. Hence E = A⁻¹, and the right block is EI = E = A⁻¹.
