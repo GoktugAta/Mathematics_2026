@@ -1,6 +1,8 @@
-# Problem 3 Solution
+# Exercise 3. Swapping Two Rows
 
-### 1. Computing det(A)
+## Question
+
+For
 
 ```math
 A =
@@ -8,13 +10,21 @@ A =
 1 & 2 & 0 \\
 0 & 3 & 1 \\
 2 & 1 & 1
-\end{pmatrix}
+\end{pmatrix},
 ```
+
+compute det(A). Then form a matrix B by swapping the first and second rows of A.
+
+First predict det(B) using a determinant property, and then verify your prediction by calculation.
+
+## Solution
+
+### 1. Computing det(A)
 
 Expanding along the first row:
 
 ```math
-\det(A) =
+\det(A)=
 1\begin{vmatrix}
 3 & 1 \\
 1 & 1
@@ -24,17 +34,12 @@ Expanding along the first row:
 0 & 1 \\
 2 & 1
 \end{vmatrix}
+=1(3-1)-2(0-2)=6.
 ```
 
-```math
-\det(A) = 1(3-1)-2(0-2)
-= 2+4
-= 6.
-```
+### 2. Forming B and Predicting Its Determinant
 
-### 2. Forming B and Predicting det(B)
-
-Swapping the first and second rows gives:
+Swapping the first two rows gives:
 
 ```math
 B =
@@ -42,40 +47,31 @@ B =
 0 & 3 & 1 \\
 1 & 2 & 0 \\
 2 & 1 & 1
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
-Swapping two rows changes the sign of the determinant. Therefore, we predict:
+A single row swap reverses the sign of the determinant. Therefore:
 
 ```math
-\det(B) = -\det(A) = -6.
+\det(B)=-\det(A)=-6.
 ```
 
 ### 3. Verification by Calculation
 
-Expanding B along the first row:
+Expanding B along its first row:
 
 ```math
-\det(B) =
+\det(B)=
 -3\begin{vmatrix}
 1 & 0 \\
 2 & 1
 \end{vmatrix}
 +
-1\begin{vmatrix}
+\begin{vmatrix}
 1 & 2 \\
 2 & 1
 \end{vmatrix}
+=-3(1-0)+(1-4)=-6.
 ```
 
-```math
-\det(B) = -3(1-0)+(1-4)
-= -3-3
-= -6.
-```
-
-The calculation confirms the prediction:
-
-```math
-\det(B) = -6 = -\det(A).
-```
+The calculation confirms the predicted sign change.
