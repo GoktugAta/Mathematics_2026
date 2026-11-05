@@ -1,6 +1,28 @@
-# Problem 11 Solution
+# Exercise 11. When Do Matrices Commute?
 
-### 1. Computing AB
+## Question
+
+Given
+
+```math
+A =
+\begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix},
+\qquad
+B =
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix},
+```
+
+find the conditions on a, b, c, d under which AB = BA. Describe the general form of all such matrices B.
+
+## Solution
+
+### 1. Computing Both Products
 
 ```math
 AB =
@@ -16,10 +38,8 @@ c & d
 \begin{pmatrix}
 a+c & b+d \\
 c & d
-\end{pmatrix}
+\end{pmatrix}.
 ```
-
-### 2. Computing BA
 
 ```math
 BA =
@@ -35,37 +55,33 @@ c & d
 \begin{pmatrix}
 a & a+b \\
 c & c+d
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
-### 3. Conditions for AB = BA
+### 2. Equating Corresponding Entries
 
-Corresponding entries must be equal:
+For AB = BA, corresponding entries must be equal:
 
 ```math
 \begin{cases}
-a+c = a, \\
-b+d = a+b, \\
-c = c, \\
-d = c+d.
+a+c=a, \\
+b+d=a+b, \\
+c=c, \\
+d=c+d.
 \end{cases}
 ```
 
-The first and fourth equations give c = 0. The second gives d = a. The third imposes no additional condition.
+The first and fourth equations require c = 0. The second requires d = a. The third gives no additional restriction.
 
-Therefore, the necessary and sufficient conditions are:
+Thus, the necessary conditions are:
 
 ```math
-c = 0,
-\qquad
-d = a.
+c=0,\qquad d=a.
 ```
 
-There are no restrictions on a or b.
+### 3. General Form and Verification
 
-### 4. General Form of B
-
-All matrices commuting with A have the form:
+The general form is:
 
 ```math
 B =
@@ -73,11 +89,10 @@ B =
 a & b \\
 0 & a
 \end{pmatrix},
-\qquad
-a,b \in \mathbb{R}.
+\qquad a,b\in\mathbb{R}.
 ```
 
-To verify sufficiency, substitute this form:
+Substituting this form gives:
 
 ```math
 AB =
@@ -85,7 +100,7 @@ AB =
 a & a+b \\
 0 & a
 \end{pmatrix}
-= BA.
+=BA.
 ```
 
-Thus, B commutes with A exactly when B is upper triangular with equal diagonal entries.
+Therefore, the conditions are also sufficient. All such matrices are upper triangular with equal diagonal entries; a and b are arbitrary.
