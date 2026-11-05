@@ -1,56 +1,49 @@
-# Problem 10 Solution
+# Exercise 10. Detecting Dependence
 
-### 1. Identifying Row Dependence
+## Question
+
+Without carrying out a full determinant calculation, explain why:
 
 ```math
-A =
-\begin{pmatrix}
+\det\begin{pmatrix}
 1 & 2 & 3 \\
 2 & 4 & 6 \\
 0 & 1 & 5
-\end{pmatrix}
+\end{pmatrix}=0.
 ```
 
-The second row is twice the first row:
+Identify a specific dependence between the rows and connect it with noninvertibility of the matrix.
+
+## Solution
+
+The second row is twice the first:
 
 ```math
 R_2=2R_1.
 ```
 
-Equivalently:
+Thus, the rows are linearly dependent. A square matrix with linearly dependent rows has determinant zero.
+
+This can also be seen by performing:
 
 ```math
-R_2-2R_1=0.
+R_2\leftarrow R_2-2R_1.
 ```
 
-Therefore, the rows are linearly dependent.
-
-### 2. Consequence for the Determinant
-
-A matrix with linearly dependent rows has determinant zero. Hence, without a full determinant calculation:
-
-```math
-\boxed{\det(A)=0}.
-```
-
-This can also be seen by applying the determinant-preserving operation:
-
-```math
-R_2 \leftarrow R_2-2R_1.
-```
-
-It produces a zero row:
+This operation preserves the determinant and gives:
 
 ```math
 \begin{pmatrix}
 1 & 2 & 3 \\
 0 & 0 & 0 \\
 0 & 1 & 5
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
-A matrix with a zero row has determinant zero.
+A matrix with a zero row has determinant zero. Therefore:
 
-### 3. Noninvertibility
+```math
+\det(A)=0.
+```
 
-A square matrix is invertible if and only if its determinant is nonzero. Since det(A) = 0, A is not invertible.
+Since a square matrix is invertible if and only if its determinant is nonzero, A is not invertible.
