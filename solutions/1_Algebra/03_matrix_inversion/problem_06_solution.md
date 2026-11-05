@@ -1,6 +1,8 @@
-# Problem 6 Solution
+# Exercise 6. Solving a System Using the Inverse
 
-### 1. Computing the Inverse
+## Question
+
+Solve Ax = b, where
 
 ```math
 A =
@@ -9,13 +11,27 @@ A =
 1 & 3
 \end{pmatrix},
 \qquad
+b =
+\begin{pmatrix}
+5 \\
+7
+\end{pmatrix},
+```
+
+using x = A⁻¹b. Then substitute the resulting vector back into the equation and check the result.
+
+## Solution
+
+### Computing the Inverse
+
+```math
 \det(A)=2\cdot3-1\cdot1=5.
 ```
 
-Therefore:
+Since the determinant is nonzero, A is invertible. The 2 × 2 inverse formula gives:
 
 ```math
-A^{-1} =
+A^{-1}=
 \frac15
 \begin{pmatrix}
 3 & -1 \\
@@ -23,13 +39,12 @@ A^{-1} =
 \end{pmatrix}.
 ```
 
-### 2. Solving the System
+### Computing the Solution
 
-Multiply b by A⁻¹:
+Multiplying Ax = b on the left by A⁻¹ gives x = A⁻¹b:
 
 ```math
-x=A^{-1}b
-=
+x=
 \frac15
 \begin{pmatrix}
 3 & -1 \\
@@ -52,10 +67,10 @@ x=A^{-1}b
 \end{pmatrix}.
 ```
 
-### 3. Checking by Substitution
+### Checking by Substitution
 
 ```math
-Ax =
+Ax=
 \begin{pmatrix}
 2 & 1 \\
 1 & 3
@@ -77,4 +92,4 @@ Ax =
 =b.
 ```
 
-Thus, the solution is verified.
+Thus, the solution satisfies the original system.
