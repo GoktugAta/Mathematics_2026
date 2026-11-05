@@ -1,9 +1,26 @@
-# Problem 5 Solution
+# Exercise 5. A 3 × 3 Matrix
 
-### 1. Form the Augmented Matrix
+## Question
+
+Use Gauss–Jordan elimination to find the inverse of
 
 ```math
-[A \mid I] =
+A =
+\begin{pmatrix}
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+1 & 0 & 1
+\end{pmatrix}.
+```
+
+Check the result by multiplication.
+
+## Solution
+
+### Forming the Augmented Matrix
+
+```math
+[A \mid I]=
 \left(
 \begin{array}{ccc|ccc}
 1 & 1 & 0 & 1 & 0 & 0 \\
@@ -13,7 +30,7 @@
 \right).
 ```
 
-### 2. Eliminate the First Entry of Row 3
+### Eliminating the First Entry of Row 3
 
 Apply:
 
@@ -31,7 +48,7 @@ R_3 \leftarrow R_3-R_1.
 \right).
 ```
 
-### 3. Eliminate the Second Entry of Row 3
+### Eliminating the Second Entry of Row 3
 
 Apply:
 
@@ -49,12 +66,12 @@ R_3 \leftarrow R_3+R_2.
 \right).
 ```
 
-### 4. Normalize the Third Pivot
+### Normalizing the Third Pivot
 
 Apply:
 
 ```math
-R_3 \leftarrow \frac{1}{2}R_3.
+R_3 \leftarrow \frac12R_3.
 ```
 
 ```math
@@ -67,7 +84,7 @@ R_3 \leftarrow \frac{1}{2}R_3.
 \right).
 ```
 
-### 5. Eliminate the Third Entry of Row 2
+### Eliminating Above the Third Pivot
 
 Apply:
 
@@ -85,7 +102,7 @@ R_2 \leftarrow R_2-R_3.
 \right).
 ```
 
-### 6. Eliminate the Second Entry of Row 1
+### Eliminating Above the Second Pivot
 
 Apply:
 
@@ -103,10 +120,10 @@ R_1 \leftarrow R_1-R_2.
 \right).
 ```
 
-Thus:
+The left block is now I, so the right block is A⁻¹:
 
 ```math
-A^{-1} =
+A^{-1}=
 \frac12
 \begin{pmatrix}
 1 & -1 & 1 \\
@@ -115,10 +132,10 @@ A^{-1} =
 \end{pmatrix}.
 ```
 
-### 7. Verification by Multiplication
+### Verification
 
 ```math
-AA^{-1} =
+AA^{-1}=
 \frac12
 \begin{pmatrix}
 1 & 1 & 0 \\
@@ -137,5 +154,7 @@ AA^{-1} =
 0 & 2 & 0 \\
 0 & 0 & 2
 \end{pmatrix}
-= I.
+=I.
 ```
+
+The product confirms the inverse.
