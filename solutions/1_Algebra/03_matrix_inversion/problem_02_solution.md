@@ -1,8 +1,24 @@
-# Problem 2 Solution
+# Exercise 2. Formula for a 2 × 2 Matrix
 
-### 1. Formula for a 2 × 2 Inverse
+## Question
 
-For a matrix with a nonzero determinant:
+Find the inverse of
+
+```math
+A =
+\begin{pmatrix}
+3 & 2 \\
+5 & 4
+\end{pmatrix}
+```
+
+using the formula for a 2 × 2 matrix. At the end, check the result by computing one product with A.
+
+## Solution
+
+### Computing the Inverse
+
+For a 2 × 2 matrix with a nonzero determinant:
 
 ```math
 \begin{pmatrix}
@@ -17,24 +33,17 @@ d & -b \\
 \end{pmatrix}.
 ```
 
-### 2. Computing the Inverse
+First, calculate the determinant:
 
 ```math
-A =
-\begin{pmatrix}
-3 & 2 \\
-5 & 4
-\end{pmatrix},
-\qquad
-\det(A)=3\cdot4-2\cdot5=2.
+\det(A)=3\cdot4-2\cdot5=12-10=2.
 ```
 
-Since the determinant is nonzero, the inverse exists:
+Since the determinant is nonzero, the inverse exists. Applying the formula:
 
 ```math
-A^{-1}
-=
-\frac{1}{2}
+A^{-1}=
+\frac12
 \begin{pmatrix}
 4 & -2 \\
 -5 & 3
@@ -42,16 +51,18 @@ A^{-1}
 =
 \begin{pmatrix}
 2 & -1 \\
--\frac{5}{2} & \frac{3}{2}
+-\frac52 & \frac32
 \end{pmatrix}.
 ```
 
-### 3. Verification
+### Verification
+
+We multiply A by the proposed inverse:
 
 ```math
 AA^{-1}
 =
-\frac{1}{2}
+\frac12
 \begin{pmatrix}
 3 & 2 \\
 5 & 4
@@ -61,7 +72,7 @@ AA^{-1}
 -5 & 3
 \end{pmatrix}
 =
-\frac{1}{2}
+\frac12
 \begin{pmatrix}
 12-10 & -6+6 \\
 20-20 & -10+12
@@ -74,4 +85,4 @@ AA^{-1}
 =I.
 ```
 
-The product confirms the result.
+The identity product confirms the inverse.
