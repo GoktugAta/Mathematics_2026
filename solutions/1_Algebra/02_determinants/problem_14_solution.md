@@ -1,40 +1,40 @@
-# Problem 14 Solution
+# Exercise 14. A System of Equations and the Determinant
 
-### 1. Condition for Exactly One Solution
+## Question
 
-The system Ax = b has exactly one solution for every b if and only if A is invertible.
+Consider the system Ax = b, where:
 
 ```math
 A =
 \begin{pmatrix}
 1 & 2 \\
 k & 4
-\end{pmatrix},
-\qquad
-\det(A)=4-2k.
-```
-
-Therefore:
-
-```math
-4-2k \neq 0
-\quad\Longleftrightarrow\quad
-\boxed{k \neq 2}.
-```
-
-### 2. The Exceptional Case: k = 2
-
-When k = 2:
-
-```math
-A =
-\begin{pmatrix}
-1 & 2 \\
-2 & 4
 \end{pmatrix}.
 ```
 
-The second row is twice the first. Writing the system explicitly:
+For which values of k does the system have exactly one solution for every b? For the remaining value, give an example of a right-hand side b for which the system has infinitely many solutions, and an example for which it has no solution.
+
+## Solution
+
+### 1. Condition for a Unique Solution
+
+The system has exactly one solution for every b if and only if A is invertible.
+
+```math
+\det(A)=1\cdot4-2k=4-2k.
+```
+
+Thus:
+
+```math
+\det(A)\neq0
+\quad\Longleftrightarrow\quad
+k\neq2.
+```
+
+### 2. The Exceptional Value
+
+When k = 2, the system is:
 
 ```math
 \begin{cases}
@@ -43,13 +43,9 @@ x_1+2x_2=b_1, \\
 \end{cases}
 ```
 
-The equations are consistent exactly when:
+The left side of the second equation is twice the left side of the first. Therefore, consistency requires b₂ = 2b₁.
 
-```math
-b_2=2b_1.
-```
-
-### 3. Example with Infinitely Many Solutions
+### 3. Infinitely Many Solutions
 
 Choose:
 
@@ -61,13 +57,7 @@ b =
 \end{pmatrix}.
 ```
 
-The second equation is twice the first, so both reduce to:
-
-```math
-x_1+2x_2=1.
-```
-
-Letting x₂ = s gives infinitely many solutions:
+Both equations reduce to x₁ + 2x₂ = 1. Setting x₂ = s gives:
 
 ```math
 x =
@@ -75,10 +65,12 @@ x =
 1-2s \\
 s
 \end{pmatrix},
-\qquad s \in \mathbb{R}.
+\qquad s\in\mathbb{R}.
 ```
 
-### 4. Example with No Solution
+Hence, there are infinitely many solutions.
+
+### 4. No Solution
 
 Choose:
 
@@ -90,7 +82,7 @@ b =
 \end{pmatrix}.
 ```
 
-The system becomes:
+The equations become:
 
 ```math
 \begin{cases}
@@ -99,10 +91,4 @@ x_1+2x_2=1, \\
 \end{cases}
 ```
 
-Twice the first equation gives a right-hand side of 2, but the second equation requires 3. Subtracting twice the first equation from the second gives:
-
-```math
-0=1.
-```
-
-Therefore, this system has no solution.
+Subtracting twice the first equation from the second gives 0 = 1, a contradiction. Therefore, this system has no solution.
