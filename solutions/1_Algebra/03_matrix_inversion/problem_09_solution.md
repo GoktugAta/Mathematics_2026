@@ -1,32 +1,8 @@
-# Problem 9 Solution
+# Exercise 9. Matrix Equation
 
-### 1. Choosing the Correct Side
+## Question
 
-We need to solve:
-
-```math
-AX=B.
-```
-
-Since A multiplies X on the left, we multiply both sides by A⁻¹ on the left:
-
-```math
-A^{-1}(AX)=A^{-1}B.
-```
-
-By associativity:
-
-```math
-(A^{-1}A)X=IX=X,
-```
-
-so:
-
-```math
-X=A^{-1}B.
-```
-
-### 2. Computing A⁻¹
+Given
 
 ```math
 A =
@@ -35,17 +11,51 @@ A =
 0 & 1
 \end{pmatrix},
 \qquad
-A^{-1} =
+B =
+\begin{pmatrix}
+3 & 1 \\
+2 & 4
+\end{pmatrix},
+```
+
+solve the equation AX = B for X. Before calculating, decide on which side of the equation A⁻¹ must be used. Then check the result by computing AX.
+
+## Solution
+
+### Choosing the Correct Side
+
+A multiplies X on the left, so we multiply both sides of AX = B by A⁻¹ on the left:
+
+```math
+A^{-1}(AX)=A^{-1}B.
+```
+
+By associativity:
+
+```math
+(A^{-1}A)X=IX=X.
+```
+
+Therefore:
+
+```math
+X=A^{-1}B.
+```
+
+### Computing the Inverse
+
+```math
+A^{-1}=
 \begin{pmatrix}
 1 & -2 \\
 0 & 1
 \end{pmatrix}.
 ```
 
-### 3. Computing X
+### Computing X
 
 ```math
-X =
+X=
 \begin{pmatrix}
 1 & -2 \\
 0 & 1
@@ -66,10 +76,10 @@ X =
 \end{pmatrix}.
 ```
 
-### 4. Verification
+### Verification
 
 ```math
-AX =
+AX=
 \begin{pmatrix}
 1 & 2 \\
 0 & 1
@@ -91,4 +101,4 @@ AX =
 =B.
 ```
 
-Therefore, the solution is verified.
+Thus, X satisfies the original matrix equation.
