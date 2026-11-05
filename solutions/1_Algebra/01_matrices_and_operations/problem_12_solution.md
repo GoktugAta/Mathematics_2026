@@ -1,6 +1,22 @@
-# Problem 12 Solution
+# Exercise 12. Formula for a Matrix Power
 
-### 1. Computing A²
+## Question
+
+Let
+
+```math
+A =
+\begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix}.
+```
+
+Compute A², A³, and A⁴, and use them to formulate a conjecture for Aⁿ. Then do not stop after checking one more case: assume the formula is true for n, multiply by A, and explain why you obtain exactly the formula for n + 1.
+
+## Solution
+
+### 1. Computing the First Powers
 
 ```math
 A^2 =
@@ -16,13 +32,11 @@ A^2 =
 \begin{pmatrix}
 1 & 2 \\
 0 & 1
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
-### 2. Computing A³
-
 ```math
-A^3 = A^2 A =
+A^3 =
 \begin{pmatrix}
 1 & 2 \\
 0 & 1
@@ -35,13 +49,11 @@ A^3 = A^2 A =
 \begin{pmatrix}
 1 & 3 \\
 0 & 1
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
-### 3. Computing A⁴
-
 ```math
-A^4 = A^3 A =
+A^4 =
 \begin{pmatrix}
 1 & 3 \\
 0 & 1
@@ -54,49 +66,31 @@ A^4 = A^3 A =
 \begin{pmatrix}
 1 & 4 \\
 0 & 1
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
-### 4. Conjecture for Aⁿ
+### 2. Conjecture
 
-The diagonal entries remain 1, the lower-left entry remains 0, and the upper-right entry increases by 1 with each multiplication by A.
-
-We conjecture that for every integer n ≥ 1:
+The diagonal entries remain 1, the lower-left entry remains 0, and the upper-right entry increases by 1 at each step. We conjecture:
 
 ```math
 A^n =
 \begin{pmatrix}
 1 & n \\
 0 & 1
-\end{pmatrix}
+\end{pmatrix},
+\qquad n\geq1.
 ```
 
-### 5. Proof by Mathematical Induction
+### 3. Proof by Induction
 
-For n = 1, the formula gives the original matrix:
+For n = 1, the formula gives A itself, so the base case holds.
 
-```math
-A^1 =
-\begin{pmatrix}
-1 & 1 \\
-0 & 1
-\end{pmatrix}
-```
-
-Assume the formula holds for some integer n ≥ 1:
+Assume the formula is true for some integer n ≥ 1. Multiplying by A gives:
 
 ```math
-A^n =
-\begin{pmatrix}
-1 & n \\
-0 & 1
-\end{pmatrix}
-```
-
-Multiplying by A gives:
-
-```math
-A^{n+1} = A^n A =
+A^{n+1}=A^nA
+=
 \begin{pmatrix}
 1 & n \\
 0 & 1
@@ -107,14 +101,9 @@ A^{n+1} = A^n A =
 \end{pmatrix}
 =
 \begin{pmatrix}
-1 \cdot 1 + n \cdot 0 & 1 \cdot 1 + n \cdot 1 \\
-0 \cdot 1 + 1 \cdot 0 & 0 \cdot 1 + 1 \cdot 1
-\end{pmatrix}
-=
-\begin{pmatrix}
-1 & n+1 \\
+1 & 1+n \\
 0 & 1
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
-This is exactly the conjectured formula with n replaced by n + 1. Therefore, by mathematical induction, the formula holds for every integer n ≥ 1.
+This is exactly the same formula with n replaced by n + 1. Therefore, mathematical induction proves the formula for every integer n ≥ 1.
