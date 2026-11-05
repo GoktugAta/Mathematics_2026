@@ -1,6 +1,8 @@
-# Problem 12 Solution
+# Exercise 12. A Parameter Revealed by a Row Operation
 
-### 1. Performing the Required Row Operation
+## Question
+
+For
 
 ```math
 A(t) =
@@ -8,16 +10,30 @@ A(t) =
 1 & 2 & 3 \\
 2 & 4 & t \\
 0 & 1 & 1
-\end{pmatrix}
+\end{pmatrix},
 ```
+
+find the values of t for which the matrix is not invertible.
+
+Before computing the determinant, perform the operation:
+
+```math
+R_2\leftarrow R_2-2R_1
+```
+
+and use the resulting structure. At the end, explain what special thing happens to the rows for the value of the parameter you found.
+
+## Solution
+
+### 1. Performing the Required Operation
 
 Apply:
 
 ```math
-R_2 \leftarrow R_2-2R_1.
+R_2\leftarrow R_2-2R_1.
 ```
 
-This operation does not change the determinant. The resulting matrix is:
+This row replacement preserves the determinant and gives:
 
 ```math
 M(t) =
@@ -25,7 +41,7 @@ M(t) =
 1 & 2 & 3 \\
 0 & 0 & t-6 \\
 0 & 1 & 1
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
 ### 2. Computing the Determinant
@@ -33,31 +49,29 @@ M(t) =
 Expanding along the first column:
 
 ```math
-\det(A(t))=\det(M(t))
+\det(A(t))
+=\det(M(t))
 =
-1\begin{vmatrix}
+\begin{vmatrix}
 0 & t-6 \\
 1 & 1
 \end{vmatrix}
-=
-0-(t-6)
-=
-6-t.
+=0-(t-6)=6-t.
 ```
 
-### 3. Finding the Noninvertible Case
+### 3. Finding the Exceptional Value
 
-A square matrix is not invertible exactly when its determinant is zero:
+The matrix is not invertible exactly when its determinant is zero:
 
 ```math
 6-t=0
 \quad\Longrightarrow\quad
-\boxed{t=6}.
+t=6.
 ```
 
-### 4. What Happens to the Rows?
+### 4. Row Dependence at t = 6
 
-When t = 6, the original second row is twice the first row:
+At t = 6, the original second row is twice the first:
 
 ```math
 \begin{pmatrix}
@@ -69,4 +83,4 @@ When t = 6, the original second row is twice the first row:
 \end{pmatrix}.
 ```
 
-Thus, the rows are linearly dependent. The required row operation produces a zero second row, confirming that the determinant is zero and the matrix is not invertible.
+Therefore, the rows are linearly dependent. The required operation produces a zero second row, explaining why the determinant vanishes.
