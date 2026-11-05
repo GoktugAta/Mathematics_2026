@@ -1,8 +1,40 @@
-# Problem 9 Solution
+# Exercise 9. Composing Transformations
+
+## Question
+
+Let
+
+```math
+S =
+\begin{pmatrix}
+2 & 0 \\
+0 & 1
+\end{pmatrix},
+\qquad
+R =
+\begin{pmatrix}
+0 & -1 \\
+1 & 0
+\end{pmatrix}.
+```
+
+The matrix S describes nonuniform scaling, while R describes a 90° counterclockwise rotation. For
+
+```math
+x =
+\begin{pmatrix}
+1 \\
+2
+\end{pmatrix},
+```
+
+compute RSx and SRx. Compare the results and explain geometrically why the order of these transformations matters.
+
+## Solution
 
 ### 1. Computing RSx
 
-The rightmost transformation acts first, so we first apply S:
+The rightmost matrix acts first. First apply S:
 
 ```math
 Sx =
@@ -18,10 +50,10 @@ Sx =
 \begin{pmatrix}
 2 \\
 2
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
-Then we apply R:
+Then apply R:
 
 ```math
 RSx =
@@ -37,12 +69,12 @@ RSx =
 \begin{pmatrix}
 -2 \\
 2
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
 ### 2. Computing SRx
 
-First, we apply R:
+First apply R:
 
 ```math
 Rx =
@@ -58,10 +90,10 @@ Rx =
 \begin{pmatrix}
 -2 \\
 1
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
-Then we apply S:
+Then apply S:
 
 ```math
 SRx =
@@ -77,10 +109,10 @@ SRx =
 \begin{pmatrix}
 -4 \\
 1
-\end{pmatrix}
+\end{pmatrix}.
 ```
 
-### 3. Comparison
+### 3. Comparison and Geometric Explanation
 
 ```math
 RSx =
@@ -93,17 +125,13 @@ RSx =
 -4 \\
 1
 \end{pmatrix}
-= SRx
+=SRx.
 ```
 
-Thus, the order of the transformations matters.
+S doubles only the horizontal coordinate.
 
-### 4. Geometric Explanation
+For RSx, this horizontal stretching occurs before the rotation. The rotation then turns the stretched horizontal component into a vertical component.
 
-S doubles the horizontal coordinate and leaves the vertical coordinate unchanged. R rotates a vector 90 degrees counterclockwise.
+For SRx, rotation occurs first, and S then stretches the horizontal component of the rotated vector.
 
-For RSx, the horizontal coordinate is doubled before rotation. The rotation then turns this stretched horizontal component into a vertical component.
-
-For SRx, the vector is rotated first. S then doubles the horizontal coordinate of the rotated vector.
-
-Because the scaling acts only along the horizontal axis, changing its order with the rotation produces different results.
+Because the scaling acts along a fixed horizontal axis, changing its order with the rotation changes the result.
