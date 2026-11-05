@@ -1,6 +1,8 @@
-# Problem 8 Solution
+# Exercise 8. Determinant of a Product
 
-We are given:
+## Question
+
+Let A and B be square matrices such that:
 
 ```math
 \det(A)=3,
@@ -8,12 +10,16 @@ We are given:
 \det(B)=-5.
 ```
 
+Compute det(AB), det(BA), and, if it exists, det(A⁻¹B). Explain why the first two results are equal even though usually AB ≠ BA.
+
+## Solution
+
 ### 1. Computing det(AB)
 
 Using the product property:
 
 ```math
-\det(AB)=\det(A)\det(B)=3(-5)=\boxed{-15}.
+\det(AB)=\det(A)\det(B)=3(-5)=-15.
 ```
 
 ### 2. Computing det(BA)
@@ -21,41 +27,35 @@ Using the product property:
 Similarly:
 
 ```math
-\det(BA)=\det(B)\det(A)=(-5)3=\boxed{-15}.
+\det(BA)=\det(B)\det(A)=(-5)3=-15.
 ```
 
 ### 3. Computing det(A⁻¹B)
 
-Since det(A) = 3 is nonzero, A is invertible. The determinant of its inverse is:
+Since det(A) = 3 is nonzero, A⁻¹ exists. The determinant of the inverse is the reciprocal of the original determinant:
 
 ```math
-\det(A^{-1})=\frac{1}{\det(A)}=\frac{1}{3}.
+\det(A^{-1})=\frac{1}{\det(A)}=\frac13.
 ```
 
 Therefore:
 
 ```math
 \det(A^{-1}B)
-=
-\det(A^{-1})\det(B)
-=
-\frac{1}{3}(-5)
-=
-\boxed{-\frac{5}{3}}.
+=\det(A^{-1})\det(B)
+=\frac13(-5)
+=-\frac53.
 ```
 
-### 4. Why det(AB) = det(BA)
+### 4. Explaining the Equal Determinants
 
-Although matrix multiplication is generally noncommutative, determinants are scalars, and scalar multiplication is commutative:
+Although matrix multiplication is generally noncommutative, determinants are scalars and scalar multiplication is commutative:
 
 ```math
 \det(AB)
-=
-\det(A)\det(B)
-=
-\det(B)\det(A)
-=
-\det(BA).
+=\det(A)\det(B)
+=\det(B)\det(A)
+=\det(BA).
 ```
 
-Thus, AB and BA have equal determinants even when the matrices themselves are different.
+Equal determinants do not imply that AB and BA are equal matrices.
