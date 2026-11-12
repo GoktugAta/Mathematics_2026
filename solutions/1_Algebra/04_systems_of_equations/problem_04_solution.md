@@ -1,135 +1,191 @@
-# Exercise 4. Gauss–Jordan
+# Exercise 4. Infinitely Many Solutions
 
 ## Question
 
-Find A⁻¹ using the Gauss–Jordan method for:
+Solve
 
 ```math
-A =
-\begin{pmatrix}
-1 & 2 \\
-3 & 5
-\end{pmatrix}.
+\begin{cases}
+x+y+z=2,\\
+2x+2y+2z=4,\\
+x-y+z=0.
+\end{cases}
 ```
 
-Show the augmented matrix [A | I] after successive operations and explain why obtaining I on the left gives the inverse on the right.
+Give the solution in parametric form, identify a free variable, and for one chosen parameter value check that the resulting point really satisfies the system.
 
 ## Solution
 
-### 1. Forming the Augmented Matrix
+### 1. Writing the augmented matrix
 
-Place the identity matrix to the right of A:
+The augmented matrix is
 
 ```math
-[A \mid I] =
 \left(
-\begin{array}{cc|cc}
-1 & 2 & 1 & 0 \\
-3 & 5 & 0 & 1
+\begin{array}{ccc|c}
+1 & 1 & 1 & 2\\
+2 & 2 & 2 & 4\\
+1 & -1 & 1 & 0
 \end{array}
 \right).
 ```
 
-We apply every row operation to the entire augmented matrix.
+The second equation is twice the first equation, so it provides no additional restriction.
 
-### 2. Eliminating Below the First Pivot
+### 2. Performing elimination
 
-Apply:
+Eliminate x from the second and third rows:
 
 ```math
-R_2\leftarrow R_2-3R_1.
+R_2 \leftarrow R_2-2R_1,
+\qquad
+R_3 \leftarrow R_3-R_1.
 ```
+
+This gives
 
 ```math
 \left(
-\begin{array}{cc|cc}
-1 & 2 & 1 & 0 \\
-0 & -1 & -3 & 1
+\begin{array}{ccc|c}
+1 & 1 & 1 & 2\\
+0 & 0 & 0 & 0\\
+0 & -2 & 0 & -2
 \end{array}
 \right).
 ```
 
-### 3. Normalizing the Second Pivot
-
-Apply:
+Interchange the second and third rows:
 
 ```math
-R_2\leftarrow -R_2.
+R_2 \leftrightarrow R_3.
 ```
+
+We obtain
 
 ```math
 \left(
-\begin{array}{cc|cc}
-1 & 2 & 1 & 0 \\
-0 & 1 & 3 & -1
+\begin{array}{ccc|c}
+1 & 1 & 1 & 2\\
+0 & -2 & 0 & -2\\
+0 & 0 & 0 & 0
 \end{array}
 \right).
 ```
 
-### 4. Eliminating Above the Second Pivot
-
-Apply:
+Divide the second row by -2:
 
 ```math
-R_1\leftarrow R_1-2R_2.
+R_2 \leftarrow -\frac{1}{2}R_2.
 ```
+
+Then subtract the second row from the first row:
+
+```math
+R_1 \leftarrow R_1-R_2.
+```
+
+The resulting matrix is
 
 ```math
 \left(
-\begin{array}{cc|cc}
-1 & 0 & -5 & 2 \\
-0 & 1 & 3 & -1
+\begin{array}{ccc|c}
+1 & 0 & 1 & 1\\
+0 & 1 & 0 & 1\\
+0 & 0 & 0 & 0
 \end{array}
 \right).
 ```
 
-The left block is now I, so:
+Therefore, the original system is equivalent to
 
 ```math
-A^{-1} =
+\begin{cases}
+x+z=1,\\
+y=1.
+\end{cases}
+```
+
+The zero row represents 0=0, so there is no contradiction.
+
+### 3. Identifying the free variable
+
+The pivot columns correspond to x and y. The column corresponding to z has no pivot, so z is a free variable.
+
+Let
+
+```math
+z=t,
+\qquad
+t\in\mathbb{R}.
+```
+
+Then x+z=1 gives
+
+```math
+x=1-t.
+```
+
+Also, y=1. Hence, all solutions are
+
+```math
+\boxed{
+(x,y,z)=(1-t,1,t),
+\qquad t\in\mathbb{R}
+}.
+```
+
+Equivalently, in vector form:
+
+```math
 \begin{pmatrix}
--5 & 2 \\
-3 & -1
-\end{pmatrix}.
-```
-
-### 5. Why the Method Works
-
-Each row operation is equivalent to multiplication on the left by an invertible elementary matrix. Let E represent their combined effect.
-
-Applying the operations to both blocks gives:
-
-```math
-[A \mid I]\longrightarrow[EA \mid EI].
-```
-
-The left block becomes I, so EA = I. Since E is invertible, A = E⁻¹ and therefore A⁻¹ = E.
-
-The right block is EI = E, which explains why it contains A⁻¹.
-
-### 6. Verification
-
-```math
-AA^{-1} =
-\begin{pmatrix}
-1 & 2 \\
-3 & 5
-\end{pmatrix}
-\begin{pmatrix}
--5 & 2 \\
-3 & -1
+x\\
+y\\
+z
 \end{pmatrix}
 =
 \begin{pmatrix}
--5+6 & 2-2 \\
--15+15 & 6-5
+1\\
+1\\
+0
 \end{pmatrix}
-=
++
+t
 \begin{pmatrix}
-1 & 0 \\
-0 & 1
-\end{pmatrix}
-=I.
+-1\\
+0\\
+1
+\end{pmatrix},
+\qquad t\in\mathbb{R}.
 ```
 
-The product confirms the inverse.
+The system is consistent and has one free variable. Therefore, it has infinitely many solutions.
+
+### 4. Checking one chosen parameter value
+
+Choose t=2. The corresponding point is
+
+```math
+(x,y,z)=(-1,1,2).
+```
+
+Substitute this point into each original equation.
+
+First equation:
+
+```math
+x+y+z=-1+1+2=2.
+```
+
+Second equation:
+
+```math
+2x+2y+2z=2(-1)+2(1)+2(2)=-2+2+4=4.
+```
+
+Third equation:
+
+```math
+x-y+z=-1-1+2=0.
+```
+
+All three equations are satisfied, so the chosen point is a solution of the original system.
