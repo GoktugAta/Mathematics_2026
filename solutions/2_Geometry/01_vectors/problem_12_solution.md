@@ -1,23 +1,89 @@
+# Exercise 12. A Normal Vector to a Plane
+
 ## Question
 
-For $A=(1,0,2)$, $B=(2,1,0)$, and $C=(0,3,1)$, construct two in-plane vectors, find a vector perpendicular to both, and check it with dot products.
+Given
+
+```math
+A=(1,0,2),
+\qquad
+B=(2,1,0),
+\qquad
+C=(0,3,1),
+```
+
+construct two vectors lying in the plane, find a vector perpendicular to both, and check the perpendicularity using dot products.
 
 ## Solution
 
-Two vectors in the plane are
+### 1. Constructing two vectors in the plane
 
-$$\overrightarrow{AB}=(1,1,-2),\qquad \overrightarrow{AC}=(-1,3,-1).$$
+Use two displacement vectors with the same starting point A:
 
-Their cross product is
+```math
+\overrightarrow{AB}=B-A
+=(2-1,1-0,0-2)
+=(1,1,-2),
+```
 
-$$\overrightarrow{AB}\times\overrightarrow{AC}=(5,3,4).$$
+```math
+\overrightarrow{AC}=C-A
+=(0-1,3-0,1-2)
+=(-1,3,-1).
+```
 
-Thus $n=(5,3,4)$ is a normal vector to the plane through the three points.
+These vectors lie in the plane through A, B, and C.
 
-The requested dot-product checks are
+### 2. Finding a perpendicular vector
 
-$$n\cdot\overrightarrow{AB}=5+3-8=0,$$
+The cross product gives a vector perpendicular to both:
 
-$$n\cdot\overrightarrow{AC}=-5+9-4=0.$$
+```math
+n=\overrightarrow{AB}\times\overrightarrow{AC}.
+```
 
-Both in-plane directions are perpendicular to $n$, which verifies that $n$ is a normal vector.
+Using the component formula:
+
+```math
+n=
+\left(
+1(-1)-(-2)(3),
+(-2)(-1)-1(-1),
+1(3)-1(-1)
+\right).
+```
+
+Therefore,
+
+```math
+n=(-1+6,2+1,3+1)
+=\boxed{(5,3,4)}.
+```
+
+Since the cross product is nonzero, the two plane vectors are not parallel. Consequently, A, B, and C determine a unique plane, and n is a normal vector to that plane.
+
+### 3. Checking perpendicularity to AB
+
+```math
+n\cdot\overrightarrow{AB}
+=(5,3,4)\cdot(1,1,-2)
+=5+3-8
+=0.
+```
+
+Thus, n is perpendicular to AB.
+
+### 4. Checking perpendicularity to AC
+
+```math
+n\cdot\overrightarrow{AC}
+=(5,3,4)\cdot(-1,3,-1)
+=-5+9-4
+=0.
+```
+
+Thus, n is also perpendicular to AC.
+
+Since AB and AC span the directions of the plane, a vector perpendicular to both is perpendicular to every direction in the plane. Therefore, (5,3,4) is a valid normal vector.
+
+Any nonzero scalar multiple of this vector is also a valid normal vector.
