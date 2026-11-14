@@ -1,19 +1,87 @@
+# Exercise 4. Dot Product and Perpendicularity
+
 ## Question
 
-For $u=(1,2,-1)$ and $v=(2,-1,3)$, test perpendicularity. Find $a$ such that $w=(2,-1,a)$ is perpendicular to $u$ and check it.
+For
+
+```math
+u=(1,2,-1),
+\qquad
+v=(2,-1,3),
+```
+
+compute the dot product and determine whether the vectors are perpendicular.
+
+Then find a so that
+
+```math
+w=(2,-1,a)
+```
+
+is perpendicular to u, and check the result.
 
 ## Solution
 
-The dot product is
+### 1. Computing the dot product
 
-$$u\cdot v=1\cdot2+2(-1)+(-1)3=-3.$$
+The dot product is found by multiplying corresponding components and adding the results:
 
-It is nonzero, so $u$ and $v$ are not perpendicular. For $w$ we require
+```math
+u\cdot v
+=1(2)+2(-1)+(-1)(3).
+```
 
-$$u\cdot w=1\cdot2+2(-1)+(-1)a=-a=0,$$
+Therefore,
 
-which gives $a=0$. With $w=(2,-1,0)$, the check is
+```math
+u\cdot v=2-2-3=\boxed{-3}.
+```
 
-$$u\cdot w=2-2+0=0,$$
+Two nonzero vectors are perpendicular if and only if their dot product is zero.
 
-so the constructed vector is perpendicular to $u$.
+Since the dot product is -3, u and v are not perpendicular.
+
+### 2. Finding a for perpendicularity
+
+For w to be perpendicular to u, we require
+
+```math
+u\cdot w=0.
+```
+
+Substituting the components gives
+
+```math
+1(2)+2(-1)+(-1)a=0.
+```
+
+Simplifying:
+
+```math
+2-2-a=0,
+```
+
+so
+
+```math
+\boxed{a=0}.
+```
+
+Thus, the required vector is
+
+```math
+w=(2,-1,0).
+```
+
+### 3. Checking the result
+
+Using a=0, we obtain
+
+```math
+u\cdot w
+=1(2)+2(-1)+(-1)(0)
+=2-2+0
+=0.
+```
+
+Both vectors are nonzero and their dot product is zero. Therefore, w is perpendicular to u, as required.
